@@ -1,0 +1,17 @@
+USE [SistemaBancario]
+GO
+/****** Object:  StoredProcedure [dbo].[spLogin]    Script Date: 28-01-2024 0:47:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[spLogin]
+      @nombre1 VARCHAR (50),
+      @clave VARCHAR (12)
+AS
+BEGIN
+
+      SELECT TOP 1 COUNT(*) FROM Usuario
+      WHERE Usuario.nombre1 = @nombre1 and Usuario.clave = @clave
+      
+END
